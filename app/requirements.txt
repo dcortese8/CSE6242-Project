@@ -4,3 +4,8 @@ matplotlib
 seaborn
 streamlit
 watchdog
+pygwalker
+gensim
+wordcloud
+nltk
+pyLDAvis

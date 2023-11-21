@@ -117,7 +117,7 @@ if predict_bttn:
     if len(selected_genre) > 0:
         for i,g in enumerate(selected_genre):
             hist_df = data[data['genre_'+g] == 1]
-            perf = round(sum(data.loc[data['revenue_adjusted'] < float(mods.avg_prediction), 'revenue_adjusted']) * 100 / sum(data['revenue_adjusted']),0)
+            perf = round(sum(hist_df.loc[hist_df['revenue_adjusted'] < float(mods.avg_prediction), 'revenue_adjusted']) * 100 / sum(hist_df['revenue_adjusted']),0)
             fig = plt.figure(figsize=(10, 4))
             sns.histplot(hist_df['revenue_adjusted'], bins=20).set(title='Revenue Spread for ' + g + ' Movies')
             if i % 2 == 0:
