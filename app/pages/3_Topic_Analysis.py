@@ -38,8 +38,8 @@ if bttn:
                             num_topics=num_topics)
 
     LDAvis_prepared = gensim_models.prepare(lda_model, corpus, id2word)
-    save_html(LDAvis_prepared, './eda/ldavis_prepared.html')
+    save_html(LDAvis_prepared, './modeling_and_analysis/eda/ldavis_prepared.html')
 
-    with open('./eda/ldavis_prepared.html', 'r') as f:
+    with open('./modeling_and_analysis/eda/ldavis_prepared.html', 'r') as f:
         html_string = f.read()
     components.html(html_string, width=1100, height=800, scrolling=True)

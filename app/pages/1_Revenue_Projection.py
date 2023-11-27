@@ -28,14 +28,14 @@ keywords = [x.replace('keywords_','') for x in data.columns if 'keywords_' in x]
 actors = list(set([y for x in [data['cast_1'], data['cast_2'], data['cast_3'], data['cast_4'], data['cast_5']] for y in x if str(y) != "nan"]))
 input_data = {}
 
-model_list = [" ".join(x.capitalize() for x in file.split(".")[0].split("_")) for file in os.listdir("./saved_models")]
+model_list = [" ".join(x.capitalize() for x in file.split(".")[0].split("_")) for file in os.listdir("./modeling_and_analysis/saved_models")]
 st.sidebar.write('Select model to see performance fit')
 mods = models(model_list)
 
 
 model_name = st.sidebar.selectbox("Select Model", options=model_list)
 model_file = "_".join(x.lower() for x in model_name.split(" "))
-performance_plot = "".join(["./plots/performance/", model_file, ".png"])
+performance_plot = "".join(["./modeling_and_analysis/plots/performance/", model_file, ".png"])
 # mods.load_performance(model_name)
 
 if os.path.exists(performance_plot):

@@ -13,14 +13,12 @@ class models():
     mae_scores = {}
 
     def __init__(self, model_list):
-        # self.model_type = model_type
         self.load_models(model_list)
 
     def load_models(self, model_list):
-        model_list = [" ".join(x.capitalize() for x in file.split(".")[0].split("_")) for file in os.listdir("./saved_models")]
         for model_name in model_list:
             model_file = "_".join(x.lower() for x in model_name.split(" "))
-            mod = "".join(["./saved_models/", model_file, ".pkl"])
+            mod = "".join(["./modeling_and_analysis/saved_models/", model_file, ".pkl"])
             with open(mod, 'rb') as f:
                 self.models[model_name] = pickle.load(f)
 
