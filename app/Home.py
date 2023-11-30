@@ -56,17 +56,6 @@ random forest is the class selected by most trees. For regression tasks, the mea
 trees is returned. Random decision forests correct for decision trees' habit of overfitting to their training set."
 """)
 
-
-st.subheader("Support Vector Regression", divider="blue")
-st.write("From Wikipedia: [Support Vector Regression](https://en.wikipedia.org/wiki/Support_vector_machine#Regression)")
-st.text("""
-"The model produced by support vector classification (as described above) depends only on a subset of the training data, \n
-because the cost function for building the model does not care about training points that lie beyond the margin. Analogously,\n
-the model produced by SVR depends only on a subset of the training data, because the cost function for building the model \n
-ignores any training data close to the model prediction."
-""")
-
-
 st.header("Insights", divider="green")
 st.text("""
 This page displays information and graphs about the historical data itself. The charts focus on adjusted revenue and how \n
