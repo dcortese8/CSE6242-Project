@@ -50,9 +50,9 @@ else:
     st.sidebar.write("No Performance Plot Found!")
 
 with col1:
-    budget = st.number_input('Budget', 100000000, None)
-    cast_size = st.number_input('Cast Size', 10, None)
-    runtime = st.number_input('Runtime (in minutes)', 120, None)
+    budget = st.number_input('Budget', min_value=1, value=100000000)
+    cast_size = st.number_input('Cast Size', min_value=1, value=10)
+    runtime = st.number_input('Runtime (in minutes)', min_value=60, value=120)
     release_dt = st.date_input('Release Date', "today")
 
 with col2:
