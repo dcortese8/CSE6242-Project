@@ -56,6 +56,7 @@ random forest is the class selected by most trees. For regression tasks, the mea
 trees is returned. Random decision forests correct for decision trees' habit of overfitting to their training set."
 """)
 
+
 st.subheader("Support Vector Regression", divider="blue")
 st.write("From Wikipedia: [Support Vector Regression](https://en.wikipedia.org/wiki/Support_vector_machine#Regression)")
 st.text("""

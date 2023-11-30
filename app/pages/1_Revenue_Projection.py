@@ -35,11 +35,17 @@ mods = models(model_list)
 
 model_name = st.sidebar.selectbox("Select Model", options=model_list)
 model_file = "_".join(x.lower() for x in model_name.split(" "))
-performance_plot = "".join(["./modeling_and_analysis/plots/performance/", model_file, ".png"])
+performance_plot = "".join(["./modeling_and_analysis/performance/plots/", model_file, ".png"])
+performance_scores = "".join(["./modeling_and_analysis/performance/scores/", model_file, ".csv"])
 # mods.load_performance(model_name)
 
 if os.path.exists(performance_plot):
     st.sidebar.image(performance_plot, use_column_width=True) 
+    if os.path.exists(performance_scores):
+        scores_df = pd.read_csv(performance_scores)
+        scores_df['Value'][0] = np.round(scores_df['Value'][0],4)
+        scores_df['Value'][1:] = scores_df['Value'][1:].apply(lambda x: '{:.2e}'.format(x))
+        st.sidebar.table(scores_df)
 else:
     st.sidebar.write("No Performance Plot Found!")
 
